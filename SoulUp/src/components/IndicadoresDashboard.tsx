@@ -7,12 +7,19 @@ function CardIndicador({ icone, valor, descricao }: { icone: string; valor: stri
     </article>
   );
 }
-export default function IndicadoresDashboard({ pontos, acoes }: { pontos: number; acoes: number }) {
+interface Props {
+  pontos: number;
+  acoes: number;
+  posicao: number;
+  faltam: number;
+}
+
+export default function IndicadoresDashboard({ pontos, acoes, posicao, faltam }: Props) {
   const indicadores = [
-    { icone: "⭐", valor: pontos.toLocaleString("pt-BR"), descricao: "Pontos este mês" },
-    { icone: "📊", valor: "#12", descricao: "Posição no ranking (demo)" },
-    { icone: "🔥", valor: "7", descricao: "Dias em sequência" },
-    { icone: "✅", valor: String(acoes), descricao: "Ações este mês" },
+    { icone: "⭐", valor: pontos.toLocaleString("pt-BR"), descricao: "Pontos totais" },
+    { icone: "📊", valor: `#${posicao}`, descricao: "Posição no ranking" },
+    { icone: "🎯", valor: String(faltam), descricao: "Pontos para o próximo nível" },
+    { icone: "✅", valor: String(acoes), descricao: "Ações registradas" },
   ];
   return <div className="grid grid-cols-2 gap-4 xl:grid-cols-4">{indicadores.map((item) => <CardIndicador key={item.descricao} {...item} />)}</div>;
 }

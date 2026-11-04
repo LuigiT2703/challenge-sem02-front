@@ -70,6 +70,10 @@ export default function Dashboard() {
   const usuario = dados?.[0];
   const registros = dados?.[1] ?? [];
   const pontos = usuario?.pontos ?? 0;
+  // Posição: quantos participantes têm mais pontos que o atual
+  const posicao = 1 + usuarios.filter((u) => u.id !== usuario?.id && u.pontos > pontos).length;
+  const proximaMeta = [20, 40, 60, 80].find((meta) => meta > pontos);
+  const faltam = proximaMeta === undefined ? 0 : proximaMeta - pontos;
   const atividades: Atividade[] = [...registros].reverse().slice(0, 5).map((registro) => ({
     id: String(registro.id),
     icone: iconePorCategoria[acoes.find((acao) => acao.id === registro.idAcao)?.categoria ?? "ENGAJAMENTO"],
@@ -80,7 +84,12 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-slate-100 lg:flex">
-      <BarraLateralDashboard pontos={pontos} evoluiu={pontos >= 80} />
+      <BarraLateralDashboard
+        nome={usuario?.nome ?? "Participante"}
+        email={usuario?.email ?? ""}
+        nivel={usuario?.nivel ?? "Iniciante"}
+        pontos={pontos}
+      />
       <main className="min-w-0 flex-1 p-4 sm:p-8 xl:p-10">
         <header className="mb-7 flex flex-wrap items-center justify-between gap-4">
           <div>
@@ -101,7 +110,7 @@ export default function Dashboard() {
 
         {usuario && (
           <>
-            <IndicadoresDashboard pontos={usuario.pontos} acoes={usuario.totalAcoes} />
+            <IndicadoresDashboard pontos={usuario.pontos} acoes={usuario.totalAcoes} posicao={posicao} faltam={faltam} />
             <p role="status" className="my-4 min-h-6 text-sm text-emerald-700">{aviso}</p>
             <div className="grid gap-6 xl:grid-cols-2">
               <ProgressoNivel pontos={usuario.pontos} />
