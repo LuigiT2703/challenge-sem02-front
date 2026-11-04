@@ -34,7 +34,7 @@ export default function Dashboard() {
     setSalvando(true);
     try {
       await registroService.criar({ idUsuario: idAtual, idAcao: acao.id });
-      setAviso(${acao.nome} registrada: +${acao.pontos} pontos!);
+      setAviso(`${acao.nome} registrada: +${acao.pontos} pontos!`);
       perfil.recarregar();
     } catch (erro) {
       setAviso(erro instanceof Error ? erro.message : "Não foi possível registrar a ação.");
@@ -85,7 +85,7 @@ export default function Dashboard() {
         <header className="mb-7 flex flex-wrap items-center justify-between gap-4">
           <div>
             <h1 className="text-3xl font-bold text-slate-900">Olá, {usuario ? usuario.nome.split(" ")[0] : "participante"}! 🌱</h1>
-            <p className="mt-3 text-slate-500">{usuario ? Nível atual: ${usuario.nivel} : "Escolha um participante."}</p>
+            <p className="mt-3 text-slate-500">{usuario ? `Nível atual: ${usuario.nivel}` : "Escolha um participante."}</p>
           </div>
           <label className="flex flex-col gap-1 text-sm font-semibold text-slate-700">
             Participante
