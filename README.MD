@@ -23,7 +23,7 @@ Na **Sprint 4**, o front-end em React consome a **API REST em Java (Spring Boot)
 | O quê | Link |
 | --- | --- |
 | Repositório no GitHub | https://github.com/LuigiT2703/challenge-sem02-front |
-| Site publicado (Vercel) | **COLOCAR_URL_DA_VERCEL** |
+| Site publicado (Vercel) | https://challenge-sem02-front.vercel.app |
 | API Java publicada (Render) | https://soulup-api-g73n.onrender.com |
 | Vídeo no YouTube | https://www.youtube.com/watch?v=xs5BvgpO3hU |
 
