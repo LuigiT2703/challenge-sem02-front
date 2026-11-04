@@ -1,7 +1,7 @@
 import type { ErroApi } from "../types/api";
 
-// URL da API Java: vem do .env (VITE_API_URL) ou usa a do Render
-const API_URL = (import.meta.env.VITE_API_URL ?? "https://soulup-api-g73n.onrender.com").replace(/\/+$/, "");
+// URL da API Java: vem só do .env (VITE_API_URL), sem URL fixa no código
+const API_URL = (import.meta.env.VITE_API_URL ?? "").replace(/\/+$/, "");
 
 // Erro com o status HTTP que a API devolveu (404, 409, 400...)
 export class ApiError extends Error {
@@ -16,6 +16,9 @@ export class ApiError extends Error {
 
 // Função única para chamar a API com fetch
 export async function requisicao<T>(caminho: string, opcoes: RequestInit = {}): Promise<T> {
+  if (!API_URL) {
+    throw new ApiError(0, "A URL da API não foi configurada (VITE_API_URL no arquivo .env).");
+  }
   let resposta: Response;
   try {
     resposta = await fetch(`${API_URL}${caminho}`, {
