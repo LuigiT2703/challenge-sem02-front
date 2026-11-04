@@ -25,7 +25,7 @@ Na **Sprint 4**, o front-end em React consome a **API REST em Java (Spring Boot)
 | Repositório no GitHub | https://github.com/LuigiT2703/challenge-sem02-front |
 | Site publicado (Vercel) | **COLOCAR_URL_DA_VERCEL** |
 | API Java publicada (Render) | https://soulup-api-g73n.onrender.com |
-| Vídeo no YouTube (Sprint 4) | **COLOCAR_LINK_DO_VIDEO** |
+| Vídeo no YouTube | https://www.youtube.com/watch?v=xs5BvgpO3hU |
 
 > A API está no plano gratuito do Render. Por isso, a primeira consulta pode levar cerca de 1 minuto: o servidor fica parado e precisa iniciar. Enquanto isso, as telas mostram "Carregando...".
 
