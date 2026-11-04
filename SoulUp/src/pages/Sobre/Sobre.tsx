@@ -27,7 +27,7 @@ export default function Sobre() {
           <h2 className="text-2xl font-bold">Como a solução funciona</h2>
           <p className="mt-4 leading-8 text-slate-300">O participante registra ações sustentáveis e acompanha pontos, atividades e conquistas. O ranking demonstra a classificação mensal, enquanto a proposta de recompensas incentiva a participação. O projeto foi desenvolvido por estudantes de ADS da FIAP para o Challenge 2026.</p>
           <h3 className="mt-6 text-xl font-bold">Escopo desta demonstração</h3>
-          <p className="mt-3 leading-8 text-slate-300">Nesta Sprint 03, os dados são locais e ilustrativos. Não há autenticação, persistência em banco, envio de mensagens ou concessão de prêmios reais. O dashboard usa um perfil de exemplo e reinicia ao sair ou recarregar a página.</p>
+          <p className="mt-3 leading-8 text-slate-300">Nesta Sprint 4, o front-end consome uma API REST em Java (Spring Boot) que salva participantes, ações e pontos em banco Oracle. Ainda não há login, envio de mensagens nem prêmios reais.</p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link to="/dashboard" className="rounded-full bg-emerald-700 px-6 py-3 font-semibold hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-4">Explorar demonstração</Link>
             <Link to="/equipe" className="rounded-full border border-white/40 px-6 py-3 font-semibold hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4">Conhecer a equipe</Link>

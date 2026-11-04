@@ -10,22 +10,22 @@ export const perguntasFaq: PerguntaFaq[] = [
   {
     id: "sobre",
     pergunta: "O que é o SoulUp?",
-    resposta: "O SoulUp é uma proposta de gamificação sustentável: registrar ações ecológicas, acumular pontos e participar de rankings. Nesta Sprint 03, a navegação é demonstrativa e não há concessão de recompensas reais.",
+    resposta: "O SoulUp é uma proposta de gamificação sustentável: registrar ações ecológicas, acumular pontos e participar de rankings. Os pontos e o ranking ficam salvos em banco de dados Oracle, por meio da nossa API Java. As recompensas ainda são uma proposta e não há prêmios reais.",
   },
   {
     id: "cadastro",
     pergunta: "Como faço para me cadastrar?",
-    resposta: "Nesta versão não é necessário cadastrar uma conta. Clique em \"Começar agora\" para acessar o perfil demonstrativo João Silva. Não há login, senha ou confirmação de e-mail neste protótipo.",
+    resposta: "Acesse a página Participantes e cadastre seu nome e e-mail. Nesta versão não há login nem senha: depois do cadastro, é só escolher seu nome no Dashboard.",
   },
   {
     id: "registro",
     pergunta: "Como registro minhas ações sustentáveis?",
-    resposta: "No Dashboard, escolha uma opção em \"Registrar Ação Rápida\". Os pontos, as atividades e o progresso são atualizados durante a sessão. Ao sair ou recarregar a página, a demonstração é reiniciada.",
+    resposta: "No Dashboard, escolha seu nome e clique em uma ação em \"Registrar Ação\". O registro é salvo no banco de dados e seus pontos, atividades e posição no ranking são atualizados na hora. Se clicar sem querer, use \"Desfazer\".",
   },
   {
     id: "pontos",
     pergunta: "Como funciona o sistema de pontos?",
-    resposta: "Nesta demonstração, cada registro vale: reciclar 50 pontos, energia 30, água 25, bike 40, plantar 35 e consumo 20. Esses valores são somados aos pontos do perfil demonstrativo.",
+    resposta: "Cada ação vale de 5 a 20 pontos, como mostrado no Dashboard. A soma define seu nível: 20 pontos Aprendiz Sustentável, 40 Consciência Verde, 60 Eco Herói e 80 Guardião da Terra.",
   },
   {
     id: "subsidio",
@@ -40,7 +40,7 @@ export const perguntasFaq: PerguntaFaq[] = [
   {
     id: "verificacao",
     pergunta: "As ações registradas são verificadas?",
-    resposta: "Não. Os registros são simulados e não há verificação por fotos, localização ou banco de dados. O protótipo demonstra apenas a interação com as ações.",
+    resposta: "Ainda não. Os registros ficam salvos no banco de dados, mas não há verificação por fotos ou localização. Cada ação só pode ser registrada uma vez por participante.",
   },
   {
     id: "perder-pontos",

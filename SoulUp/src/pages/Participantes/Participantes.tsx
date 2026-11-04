@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { Carregando, ListaVazia, MensagemErro } from "../../components/EstadoTela";
 import { useRequisicao } from "../../hooks/useRequisicao";
 import { usuarioService } from "../../services/usuarioService";
@@ -14,6 +14,7 @@ export default function Participantes() {
   const [emEdicao, setEmEdicao] = useState<number | null>(null);
   const [mensagem, setMensagem] = useState<Mensagem | null>(null);
   const [salvando, setSalvando] = useState(false);
+  const navigate = useNavigate();
 
   function validar(): string | null {
     if (!/^[\p{L} ]{3,80}$/u.test(form.nome.trim())) return "Nome deve ter de 3 a 80 letras.";
@@ -29,16 +30,14 @@ export default function Participantes() {
     }
     setSalvando(true);
     try {
+      // Depois de salvar, leva para o perfil com a mensagem de sucesso
       if (emEdicao === null) {
         const novo = await usuarioService.criar(form);
-        setMensagem({ tipo: "sucesso", texto: `${novo.nome} cadastrado com sucesso!` });
+        navigate(`/ranking/${novo.id}`, { state: { mensagem: `${novo.nome} cadastrado com sucesso!` } });
       } else {
-        await usuarioService.atualizar(emEdicao, form);
-        setMensagem({ tipo: "sucesso", texto: "Participante atualizado!" });
+        const atualizado = await usuarioService.atualizar(emEdicao, form);
+        navigate(`/ranking/${atualizado.id}`, { state: { mensagem: "Participante atualizado!" } });
       }
-      setForm(formularioVazio);
-      setEmEdicao(null);
-      recarregar();
     } catch (e) {
       setMensagem({ tipo: "erro", texto: e instanceof Error ? e.message : "Erro ao salvar." });
     } finally {

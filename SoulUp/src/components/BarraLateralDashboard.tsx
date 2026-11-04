@@ -8,13 +8,14 @@ const links = [
   { destino: "/equipe", titulo: "Equipe", icone: "👥" },
 ];
 
-export default function BarraLateralDashboard({
-  pontos,
-  evoluiu,
-}: {
+interface Props {
+  nome: string;
+  email: string;
+  nivel: string;
   pontos: number;
-  evoluiu: boolean;
-}) {
+}
+
+export default function BarraLateralDashboard({ nome, email, nivel, pontos }: Props) {
   return (
     <aside className="bg-[#1A1A2E] p-5 text-white lg:min-h-screen lg:w-64 lg:shrink-0 lg:self-stretch xl:w-72">
       <div className="lg:sticky lg:top-6">
@@ -27,13 +28,11 @@ export default function BarraLateralDashboard({
             <span aria-hidden="true">🌿</span>
           </Link>
 
-          <h2 className="mt-4 text-xl font-bold">João Silva</h2>
-          <p className="mt-2 text-slate-400">joao@email.com</p>
+          <h2 className="mt-4 text-xl font-bold">{nome}</h2>
+          <p className="mt-2 break-all text-slate-400">{email}</p>
 
           <p className="mt-4 inline-block rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm font-bold text-emerald-400">
-            {evoluiu
-              ? "Nível 6 — Guardião Verde"
-              : "Nível 5 — Eco Guerreiro"}
+            {nivel}
           </p>
         </div>
 

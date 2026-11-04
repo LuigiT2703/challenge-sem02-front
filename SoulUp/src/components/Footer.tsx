@@ -25,7 +25,7 @@ const Footer = () => {
                     </div>
                     <div className="flex flex-col p-4">
                         <h2 className="text-white">Siga-nos</h2>
-                        <a className="inline-flex min-h-11 items-center text-white/60 hover:text-white" href="https://github.com/Pedro-H-Salvatore/challenge-sem02" target="_blank" rel="noopener noreferrer">GitHub do projeto ↗</a>
+                        <a className="inline-flex min-h-11 items-center text-white/60 hover:text-white" href="https://github.com/LuigiT2703/challenge-sem02-front" target="_blank" rel="noopener noreferrer">GitHub do projeto ↗</a>
                         <Link className="inline-flex min-h-11 items-center text-white/60 hover:text-white" to={"/equipe"}>LinkedIn dos integrantes</Link>
 
                     </div>

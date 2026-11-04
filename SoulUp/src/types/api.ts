@@ -1,4 +1,4 @@
-// Tipos iguais ao contrato da API Java (https://soulup-api-g73n.onrender.com)
+// Tipos iguais ao contrato da API Java (respostas em JSON camelCase)
 
 export type Categoria =
   | "MOBILIDADE" | "RESIDUOS" | "ENERGIA" | "AGUA"

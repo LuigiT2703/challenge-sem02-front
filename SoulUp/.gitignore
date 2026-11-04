@@ -25,3 +25,6 @@ dist-ssr
 
 # O lockfile deve acompanhar o projeto para permitir npm ci após o clone.
 !package-lock.json
+
+# Variaveis de ambiente locais (copie do .env.example)
+.env
